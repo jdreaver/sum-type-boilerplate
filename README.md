@@ -1,7 +1,11 @@
 # sum-type-boilerplate: A Haskell sum type library
 
+[![CircleCI](https://circleci.com/gh/jdreaver/sum-type-boilerplate.svg?style=svg)](https://circleci.com/gh/jdreaver/sum-type-boilerplate)
+
 This library allows users to use Template Haskell to easily construct and
-manipulate sum types.
+manipulate sum types. It was born out of the author's desire to reduce the
+boilerplate associated with sum types while keeping the type safety they
+provide.
 
 ## Sum Types
 
