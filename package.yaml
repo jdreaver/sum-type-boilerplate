@@ -1,0 +1,44 @@
+name: sum-type-boilerplate
+version: "0.1.0"
+maintainer: David Reaver
+author: David Reaver
+synopsis: Library for reducing the boilerplate involved in creating and manipulating sum types
+description: Library for reducing the boilerplate involved in creating and manipulating sum types
+stability: experimental
+category: Types,TH
+license: MIT
+license-file: LICENSE.md
+
+github: jdreaver/sum-type-boilerplate
+
+extra-source-files:
+  - CHANGELOG.md
+  - README.md
+
+dependencies:
+  - base >= 4.9 && < 5
+
+  - template-haskell
+
+library:
+  source-dirs:
+    - library
+  ghc-options: -Wall
+
+tests:
+  spec:
+    main: Spec.hs
+    ghc-options: -Wall
+    source-dirs:
+      - tests
+      - library
+    dependencies:
+      - hspec
+      - HUnit
+  style:
+    main: HLint.hs
+    ghc-options: -Wall
+    source-dirs:
+      - tests
+    dependencies:
+      - hlint
