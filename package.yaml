@@ -2,7 +2,7 @@ name: sum-type-boilerplate
 version: "0.1.0"
 maintainer: David Reaver
 author: David Reaver
-synopsis: Library for reducing the boilerplate involved in creating and manipulating sum types
+synopsis: Library for reducing the boilerplate involved with sum types
 description: Library for reducing the boilerplate involved in creating and manipulating sum types
 stability: experimental
 category: Types,TH
