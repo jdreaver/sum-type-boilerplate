@@ -2,10 +2,10 @@
 
 [![CircleCI](https://circleci.com/gh/jdreaver/sum-type-boilerplate.svg?style=svg)](https://circleci.com/gh/jdreaver/sum-type-boilerplate)
 
-This library allows users to use Template Haskell to easily construct and
-manipulate sum types. It was born out of the author's desire to reduce the
-boilerplate associated with sum types while keeping the type safety they
-provide.
+This library allows users to easily construct and manipulate sum types via
+Template Haskell It was born out of the author's desire to reduce the
+boilerplate associated with lots of large sum types while keeping the type
+safety they provide.
 
 ## Sum Types
 
@@ -66,3 +66,23 @@ partialSumTypeConverter "mySumToOtherSum" ''MySum ''OtherSum
 * The template haskell used here just produces vanilla Haskell data types. No
   crazy type-level magic is going on. That means if you want to ditch this
   library later on, just copy the generated code into your project.
+
+## Motivation
+
+While working on
+my [event sourcing library](https://github.com/jdreaver/eventful) I found it is
+super common for me to have to construct fairly large sum types of events. In
+the system I was working on, each event handler has their own event sum type
+that represents what events that handler can listen to. I also had a sum type
+that holds all the events in the system for the purpose of serialization and
+interacting with the database.
+
+Converting between all of these event types became a huge pain, and I was
+writing a ton of boilerplate. I didn't want to lose type safety or
+encapsulation by just using the "big sum type" everywhere, but I also didn't
+want to keep writing new sum types and conversion functions. Thus, I created
+the Template Haskell functions that are now in `sum-type-boilerplate` to ease
+the burden of writing this mechanical code.
+
+I thought this might be useful not only for users of `eventful`, but also for
+anyone that needs to deal with large sum types.
