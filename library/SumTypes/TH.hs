@@ -138,6 +138,11 @@ sumTypeConverter functionName sourceType targetType = do
 -- | Similar to 'sumTypeConverter', except not all types in the source sum type
 -- need to be present in the target sum type.
 --
+-- Note that this doesn't produce a partial function in the Haskell sense; you
+-- won't get an 'error' with the generated function on any arguments. The word
+-- partial is used mathematically to denote that not all types from the source
+-- sum type are present in the target sum type.
+--
 -- > data MySum
 -- >   = MySumTypeA TypeA
 -- >   | MySumTypeB TypeB
