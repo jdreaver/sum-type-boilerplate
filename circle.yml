@@ -1,0 +1,20 @@
+machine:
+  environment:
+    PATH: "$HOME/.local/bin:$PATH"
+    STACK_VERSION: 1.4.0
+
+dependencies:
+  pre:
+   - mkdir -p ~/.local/bin
+   - curl -L https://github.com/commercialhaskell/stack/releases/download/v$STACK_VERSION/stack-$STACK_VERSION-linux-x86_64.tar.gz | tar -xzv -C ~/.local/bin && ln -vsf ~/.local/bin/stack-*/stack ~/.local/bin/stack
+  cache_directories:
+    - "~/.stack"
+    - "~/sum-type-boilerplate/.stack-work"
+  override:
+    - stack setup
+    - stack build --test --only-dependencies --no-run-tests --jobs=1
+
+test:
+  override:
+    - "stack test --pedantic --jobs=1"
+    - "stack haddock --fast --no-haddock-deps --jobs=1"
