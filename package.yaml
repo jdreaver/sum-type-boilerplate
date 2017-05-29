@@ -1,5 +1,5 @@
 name: sum-type-boilerplate
-version: "0.1.0"
+version: "0.1.1"
 maintainer: David Reaver
 author: David Reaver
 synopsis: Library for reducing the boilerplate involved with sum types
