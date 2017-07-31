@@ -31,14 +31,6 @@ tests:
     ghc-options: -Wall
     source-dirs:
       - tests
-      - library
     dependencies:
       - hspec
-      - HUnit
-  style:
-    main: HLint.hs
-    ghc-options: -Wall
-    source-dirs:
-      - tests
-    dependencies:
-      - hlint
+      - sum-type-boilerplate
