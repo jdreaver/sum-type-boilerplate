@@ -31,7 +31,6 @@ tests:
     ghc-options: -Wall
     source-dirs:
       - tests
-      - library
     dependencies:
       - hspec
-      - HUnit
+      - sum-type-boilerplate
